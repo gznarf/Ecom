@@ -12,6 +12,9 @@ namespace Ecommerce.Domain.DTO
         public int ID_BillDetail { get; set; }
         public int ID_Client { get; set; }
         public int ID_BillDetails { get; set; }
+         public string date { get; set; }
+        public double total { get; set; }
+        public int BillNumber { get; set; }
 
     }
 }
