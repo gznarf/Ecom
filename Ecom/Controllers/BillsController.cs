@@ -1,4 +1,5 @@
-﻿using Ecommerce.Domain.DTO;
+﻿using Ecommerce.Data.Models;
+using Ecommerce.Domain.DTO;
 using Ecommerce.Domain.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -41,6 +42,25 @@ namespace Ecom.Controllers
                 return NotFound();
             }
             return Ok(BillOK);
+        }
+
+        [HttpPost]
+        public async Task<ActionResult<Bill>>PostBill(BillDTO bill)
+        {
+            var bills = _billService.GetAllBills();
+            if(bills == null)
+            {
+                return Problem("Entity set 'EcomDbContext.Bill' is null");
+            }
+            try
+            {
+                _billService.AddBill(bill);
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+            return Ok(bill);
         }
     }
 }

@@ -41,8 +41,17 @@ namespace Ecommerce.Domain.Services
             {
                 Bill bill = new Bill()
                 {
-                   
-                }
+                    ID_BillDetail = billDTO.ID_BillDetail,
+                    ID_Client = billDTO.ID_Client,
+                    date = billDTO.date,
+                    total = billDTO.total,
+                    BillNumber = billDTO.BillNumber
+                };
+                _billRepository.AddBill(bill);
+            }
+            catch(Exception ex)
+            {
+                throw ex;
             }
 
         }
