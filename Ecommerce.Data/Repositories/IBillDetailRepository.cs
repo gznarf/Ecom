@@ -9,8 +9,8 @@ namespace Ecommerce.Data.Repositories
 {
     public interface IBillDetailRepository
     {
-        public IEnumerable<BillDetail> GetBillDetails();
+        public IEnumerable<BillDetail> GetAllBillDetails();
         public BillDetail GetById(int id);
-        public void AddBillDatail(BillDetail billDetail);
+        public void AddBillDetail(BillDetail billDetail);
     }
 }

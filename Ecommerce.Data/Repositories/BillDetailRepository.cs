@@ -17,7 +17,7 @@ namespace Ecommerce.Data.Repositories
             _context = context;
         }
 
-        public IEnumerable<BillDetail> GetAllBills()
+        public IEnumerable<BillDetail> GetAllBillDetails()
         {
             return _context.BillDetails;
         }
