@@ -23,7 +23,7 @@ namespace Ecommerce.Domain.Services
 
         public IEnumerable<BillDetailDTO> GetBillDetails()
         {
-            var billDetail = _billDetailRepository.GetBillDetails();
+            var billDetail = _billDetailRepository.GetAllBillDetails();
             var billDetailToReturn = _mapper.Map<IEnumerable<BillDetailDTO>>(billDetail);
             return billDetailToReturn;
         }
@@ -48,7 +48,7 @@ namespace Ecommerce.Domain.Services
                     quantity = billDetailDTO.quantiity,
                     
                 };
-                _billDetailRepository.AddBillDatail(billDetail);
+                _billDetailRepository.AddBillDetail(billDetail);
             }
             catch(Exception ex)
             {
