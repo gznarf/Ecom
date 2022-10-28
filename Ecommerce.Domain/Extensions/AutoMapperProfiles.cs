@@ -16,6 +16,8 @@ namespace Ecommerce.Domain.Extensions
             CreateMap<Categorie, CategorieDTO>();
             CreateMap<Product, ProductDTO>();
             CreateMap<Bill, BillDTO>();
+            CreateMap<BillDetail, BillDetailDTO>();
+            CreateMap<Client, ClientDTO>();
             
         }
     }
